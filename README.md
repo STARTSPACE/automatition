@@ -76,30 +76,25 @@
 
 Средствами AWS Console или AWS CLI создайте инстанцию с операционной системой Ubuntu 14.04 (LTS). Подключиться к ней можно с использованием PuTTY или MobaXterm. Более подробно можно почитать на портале документации AWS, [Connect to Your Instance] (http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-connect-to-instance-linux.html)
 
-После подключения к консоли переключаемся на пользователя Root
-```
-$ sudo -s
-```
-
 Обновляем операционную систему и установленные утилиты
 ```
-$ apt-get update && apt-get upgrade
+$ sudo apt-get update && sudo apt-get upgrade
 ```
 
 Устанавливаем необходимые пакеты
 ```
-$ apt-get install libwww-perl libdatetime-perl
+$ sudo apt-get install libwww-perl libdatetime-perl
 ```
 
 Уставливаем Python PIP
 ```
 $ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-$ python get-pip.py
+$ sudo python get-pip.py
 ```
 
 Устанавливаем AWS CLI
 ```
-$ pip install awscli
+$ sudo pip install awscli
 ```
 
 Настраиваем AWS CLI
@@ -133,22 +128,31 @@ REGIONS ec2.ap-southeast-1.amazonaws.com        ap-southeast-1
 
 Устанавливаем Git
 ```
-$ apt-get install git
+$ sudo apt-get install git
 ```
 
 Создаем рабочие директории
 ```
-$ mkdir /opt/aws && mkdir /opt/aws/automatition
+$ mkdir ~/aws && mkdir ~/aws/automatition && mkdir ~/tmp
 ```
+
+Создаем директорию для логов
+``sudo mkdir /awslog```
+
+Создаем файл логов
+```sudo touch /awslog/automatition-instances.log```
+
+Назначаем для директории логов права доступа
+```sudo chmod -R 777 /awslog```
 
 Устанавливаем комплект скриптов
 ```
-$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git /opt/aws/automatition
+$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git ~/aws/automatition
 ```
 
 Переходим в рабочую директорию
 ```
-$ cd /opt/aws
+$ cd ~/aws
 ```
 
 Устанавливаем права на исполнение файлов
@@ -158,12 +162,15 @@ $ find . -type f -exec chmod +x {} \;
 
 Устанавливаем правильный временной пояс (мы используем московское время)
 ```
-$ dpkg-reconfigure tzdata
+$ sudo dpkg-reconfigure tzdata
 ```
+
+Назначаем приложение для редактирования заданий CRON (мы используем Nano)
+```crontab -e```
 
 Импортируем задания для CRON
 ```
-$ crontab /opt/aws/automatition/import-cron-jobs-full-list.sh
+$ crontab ~/aws/automatition/import-cron-jobs-full-list.sh
 ```
 
 **На этом установка завершена**
