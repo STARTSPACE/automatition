@@ -162,7 +162,7 @@ $ dpkg-reconfigure tzdata
 
 Импортируем задания для CRON
 ```
-$ crontab /opt/aws/automatition/cron/import-for-root.sh
+$ crontab /opt/aws/automatition/import-cron-jobs-full-list.sh
 ```
 
 **На этом установка завершена**
