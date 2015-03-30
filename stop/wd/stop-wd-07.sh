@@ -4,7 +4,7 @@
 # export AWS_SECRET_KEY="Your-Secret-Key"
 
 today=`date +"%d-%m-%Y","%T"`
-logfile="/var/log/automatition-instances.log"
+logfile="/awslog/automatition-instances.log"
 
 # Grab all Instance IDs for STOP action and export the IDs to a text file
 aws ec2 describe-instances --filters Name=tag:bash-stoptime,Values=07-00 Name=tag:bash-profile,Values=wd --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/stop_wd_instance_info.txt

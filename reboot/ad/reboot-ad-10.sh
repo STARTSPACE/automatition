@@ -4,7 +4,7 @@
 # export AWS_SECRET_KEY="Your-Secret-Key"
 
 today=`date +"%d-%m-%Y","%T"`
-logfile="/var/log/automatition-instances.log"
+logfile="/awslog/automatition-instances.log"
 
 # Grab all Instance IDs for REBOOT action and export the IDs to a text file
 aws ec2 describe-instances --filters Name=tag:bash-reboottime,Values=10-00 Name=tag:bash-profile,Values=ad --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/reboot_ad_instance_info.txt
