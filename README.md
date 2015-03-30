@@ -137,13 +137,19 @@ $ mkdir ~/aws && mkdir ~/aws/automatition && mkdir ~/tmp
 ```
 
 Создаем директорию для логов
-``sudo mkdir /awslog```
+```
+sudo mkdir /awslog
+```
 
 Создаем файл логов
-```sudo touch /awslog/automatition-instances.log```
+```
+sudo touch /awslog/automatition-instances.log
+```
 
 Назначаем для директории логов права доступа
-```sudo chmod -R 777 /awslog```
+```
+sudo chmod -R 777 /awslog
+```
 
 Устанавливаем комплект скриптов
 ```
