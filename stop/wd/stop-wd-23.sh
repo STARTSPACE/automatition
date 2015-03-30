@@ -7,10 +7,10 @@ today=`date +"%d-%m-%Y","%T"`
 logfile="/var/log/automatition-instances.log"
 
 # Grab all Instance IDs for STOP action and export the IDs to a text file
-aws ec2 describe-instances --filters Name=tag:bash-stoptime,Values=23-00 Name=tag:bash-profile,Values=wd --query Reservations[*].Instances[*].[InstanceId] --output text > /tmp/stop_wd_instance_info.txt
+aws ec2 describe-instances --filters Name=tag:bash-stoptime,Values=23-00 Name=tag:bash-profile,Values=wd --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/stop_wd_instance_info.txt
 
 # Take list of stoping instances
-for instance_id in $(cat /tmp/stop_wd_instance_info.txt)
+for instance_id in $(cat ~/tmp/stop_wd_instance_info.txt)
 
 do
 
@@ -18,5 +18,5 @@ do
 stopresult=$(aws ec2 stop-instances --instance-ids $instance_id)
 
 # Put info into log file
-echo Atempt to stop $today instances by AWS CLI with result $stoptresult --EMPTY FOR NO RESULT-- >> $logfile
+echo Atempt to stop $today instances by AWS CLI with result $stopresult --EMPTY FOR NO RESULT-- >> $logfile
 done
