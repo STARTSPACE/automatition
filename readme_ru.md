@@ -130,3 +130,41 @@ REGIONS ec2.ap-southeast-2.amazonaws.com        ap-southeast-2
 REGIONS ec2.ap-southeast-1.amazonaws.com        ap-southeast-1
 ```
 
+Устанавливаем Git
+```
+$ apt-get install git
+```
+
+Создаем рабочие директории
+```
+$ mkdir /opt/aws && mkdir /opt/aws/automatition
+```
+
+Устанавливаем комплект скриптов
+```
+$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git /opt/aws/automatition
+```
+
+Переходим в рабочую директорию
+```
+$ cd /opt/aws
+```
+
+Устанавливаем права на исполнение файлов
+```
+$ find . -type f -exec chmod +x {} \;
+```
+
+Устанавливаем правильный временной пояс (мы используем московское время)
+```
+$ dpkg-reconfigure tzdata
+```
+
+Импортируем задания для CRON
+```
+$ crontab /opt/aws/automatition/cron/import-for-root.sh
+```
+
+**На этом установка завершена**
+
+# Настройка расписания запуска, остановки и перезапуска инстанций
