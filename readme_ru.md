@@ -82,10 +82,51 @@ $ sudo -s
 
 Обновляем операционную систему и установленные утилиты
 ```
-$ apt-get update && upgrade
+$ apt-get update && apt-get upgrade
 ```
 
+Устанавливаем необходимые пакеты
+```
+$ apt-get install libwww-perl libdatetime-perl
+```
 
+Уставливаем Python PIP
+```
+$ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+$ python get-pip.py
+```
 
+Устанавливаем AWS CLI
+```
+$ pip install awscli
+```
 
+Настраиваем AWS CLI
+```
+$ aws configure
+```
+
+Для настройки AWS CLI потребуется файл с учетной записью технического пользователя. Последовательно в строку консоли внесите следующие данные:
+- ключ доступа (Access Key)
+- секретный ключ (Security Key)
+- регион (например eu-west-1 или eu-central-1)
+- формат вывода данных - ПРОПУСТИТЬ (нажать ENTER)
+
+Проверяем установку AWS CLI
+```
+$ aws ec2 describe-regions --output text
+```
+
+Вы должны получить примерно следующий ответ
+```
+REGIONS ec2.sa-east-1.amazonaws.com     sa-east-1
+REGIONS ec2.eu-central-1.amazonaws.com  eu-central-1
+REGIONS ec2.ap-northeast-1.amazonaws.com        ap-northeast-1
+REGIONS ec2.eu-west-1.amazonaws.com     eu-west-1
+REGIONS ec2.us-east-1.amazonaws.com     us-east-1
+REGIONS ec2.us-west-1.amazonaws.com     us-west-1
+REGIONS ec2.us-west-2.amazonaws.com     us-west-2
+REGIONS ec2.ap-southeast-2.amazonaws.com        ap-southeast-2
+REGIONS ec2.ap-southeast-1.amazonaws.com        ap-southeast-1
+```
 
