@@ -7,7 +7,7 @@ today=`date +"%d-%m-%Y","%T"`
 logfile="/awslog/automatition-instances.log"
 
 # Grab all Instance IDs for START action and export the IDs to a text file
-aws ec2 describe-instances --filters Name=tag:bash-starttime,Values=20-00 Name=tag:bash-profile,Values=wd --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/start_wd_instance_info.txt
+sudo aws ec2 describe-instances --filters Name=tag:bash-starttime,Values=20-00 Name=tag:bash-profile,Values=wd --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/start_wd_instance_info.txt
 
 # Take list of starting instances
 for instance_id in $(cat ~/tmp/start_wd_instance_info.txt)
@@ -15,7 +15,7 @@ for instance_id in $(cat ~/tmp/start_wd_instance_info.txt)
 do
 
 # Start instances
-startresult=$(aws ec2 start-instances --instance-ids $instance_id)
+startresult=$(sudo aws ec2 start-instances --instance-ids $instance_id)
 
 # Put info into log file
 echo Atempt to start $today instances by AWS CLI with result $startresult --EMPTY FOR NO RESULT-- >> $logfile
