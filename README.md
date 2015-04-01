@@ -31,7 +31,7 @@
 
 В первую очередь необходимо создать права доступа, группу и технического пользователя.
 
-**Шаг 1.** Для создания прав доступа необходимо войти в Панель управления AWS и средствами IAM (Identity and Access Management) создать "Policy" (меню слева "Policies", кнопка "Create Policy", выбрать "Create Own Policy" и нажать на кнопку "Select"). В открывшееся окно вставить код, представленный ниже:
+**Шаг 1.** Для создания прав доступа необходимо войти в Панель управления AWS и средствами IAM (Identity and Access Management) создать "Policy" (меню слева "Policies", кнопка "Create Policy", выбрать "Create Own Policy" и нажать на кнопку "Select"). В открывшееся окно вставить код, представленный ниже (он включает в себя разрешения для резервного копирования путем создания snapshot, см. [AWS Snapsots with tags] (https://github.com/STARTSPACE/aws-snapshot-with-tags)):
 ```
 {
     "Version": "2012-10-17",
@@ -41,10 +41,23 @@
             "Effect": "Allow",
             "Action": [
                 "ec2:DescribeInstances",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstanceStatus",
+                "ec2:ReportInstanceStatus",
                 "ec2:StopInstances",
                 "ec2:StartInstances",
                 "ec2:RebootInstances",
-                "ec2:DescribeRegions"
+                "ec2:DescribeRegions",
+                "ec2:CreateSnapshot",
+                "ec2:CreateTags",
+                "ec2:DeleteSnapshot",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeSnapshotAttribute",
+                "ec2:ResetSnapshotAttribute",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeVolumeAttribute",
+                "ec2:DescribeVolumeStatus",
+                "ec2:ResetSnapshotAttribute"
             ],
             "Resource": "*"
         }
