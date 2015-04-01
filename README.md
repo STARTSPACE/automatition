@@ -31,7 +31,7 @@
 
 В первую очередь необходимо создать права доступа, группу и технического пользователя.
 
-**Шаг 1.** Для создания прав доступа необходимо войти в Панель управления AWS и средствами IAM (Identity and Access Management) создать "Policy" (меню слева "Policies", кнопка "Create Policy", выбрать "Create Own Policy" и нажать на кнопку "Select"). В открывшееся окно вставить код, представленный ниже (он включает в себя разрешения для резервного копирования путем создания snapshot, см. [AWS Snapsots with tags] (https://github.com/STARTSPACE/aws-snapshot-with-tags)):
+**Шаг 1.** Для создания прав доступа необходимо войти в Панель управления AWS и средствами IAM (Identity and Access Management) создать "Policy" (меню слева "Policies", кнопка "Create Policy", выбрать "Create Own Policy" и нажать на кнопку "Select"). В открывшееся окно вставить код, представленный ниже (он включает в себя разрешения для резервного копирования путем создания "snapshot"-ов, см. [AWS Snapshots with tags] (https://github.com/STARTSPACE/aws-snapshot-with-tags)):
 ```
 {
     "Version": "2012-10-17",
