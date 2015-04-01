@@ -255,3 +255,34 @@ $ crontab ~/aws/automatition/import-cron-jobs-full-list.sh
 - Устанавливаем обновления ```sudo git pull```
 - Обновляем права на установленные обновления ```sudo find . -type f -exec chmod +x {} \;```
 - Наличие или отсутствие ошибок можно посмотреть командой ```sudo nano /var/log/syslog``` - имейте ввиду, что ошибки там будут появляться только после срабатывания CRON, то есть по прошествии полного часа (12:00, 13:00 и т.д.)
+
+***Доустановка на сервер скриптов резерного копирования***
+
+Создаем файл логов
+```
+sudo touch /awslog/ebs-snapshot.log
+```
+
+Назначаем для директории логов права доступа
+```
+sudo chmod -R 777 /awslog
+```
+
+Устанавливаем комплект скриптов
+```
+$ git clone https://github.com/STARTSPACE/aws-snapshot-with-tags.git ~/aws/snapshot/
+```
+
+Переходим в рабочую директорию
+```
+$ cd ~/aws
+```
+
+Устанавливаем права на исполнение файлов
+```
+$ find . -type f -exec chmod +x {} \;
+```
+
+Импортируем задания для CRON
+```
+$ crontab ~/aws/automatition/import-cron-jobs-full-list.sh
