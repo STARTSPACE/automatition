@@ -263,5 +263,5 @@ $ crontab ~/aws/automatition/import-cron-jobs-full-list.sh
 - Устанавливаем комплект скриптов ```$ git clone https://github.com/STARTSPACE/aws-snapshot-with-tags.git ~/aws/snapshot/```
 - Переходим в рабочую директорию ```$ cd ~/aws```
 - Устанавливаем права на исполнение файлов ```$ find . -type f -exec chmod +x {} \;```
-- Импортируем задания для CRON ```$ crontab ~/aws/automatition/import-cron-jobs-full-list.sh```
+- Импортируем задания для CRON ```$ crontab ~/aws/snapshot/import-cron-jobs-full-list.sh```
 - Наличие или отсутствие ошибок можно посмотреть командой ```sudo nano /var/log/syslog``` - имейте ввиду, что ошибки там будут появляться только после срабатывания CRON, то есть по прошествии полного часа (12:00, 13:00 и т.д.)
