@@ -263,5 +263,5 @@ $ crontab ~/aws/automation/import-cron-jobs-combined.sh
 - Устанавливаем комплект скриптов ```$ git clone https://github.com/STARTSPACE/aws-ebs-snapshot-with-tags-by-timetable.git ~/aws/snapshot/```
 - Переходим в рабочую директорию ```$ cd ~/aws```
 - Устанавливаем права на исполнение файлов ```$ find ~/aws/snapshot -type f -exec chmod +x {} \;```
-- Импортируем задания для CRON ```$ crontab ~/aws/snapshot/import-cron-jobs-combined.sh```
+- Импортируем задания для CRON ```$ crontab ~/aws/snapshot/import-cron-jobs-combined-3-in-1.sh```
 - Наличие или отсутствие ошибок можно посмотреть командой ```$ sudo nano /var/log/syslog``` - имейте ввиду, что ошибки там будут появляться только после срабатывания CRON, то есть по прошествии полного часа (12:00, 13:00 и т.д.)
