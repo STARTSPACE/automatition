@@ -150,17 +150,17 @@ $ mkdir ~/aws && mkdir ~/aws/automation && mkdir ~/tmp
 
 Создаем директорию для логов
 ```
-sudo mkdir /awslog
+$ sudo mkdir /awslog
 ```
 
 Создаем файл логов
 ```
-sudo touch /awslog/automation-instances.log
+$ sudo touch /awslog/automation-instances.log
 ```
 
 Назначаем для директории логов права доступа
 ```
-sudo chmod -R 777 /awslog
+$ sudo chmod -R 777 /awslog
 ```
 
 Устанавливаем комплект скриптов
@@ -185,7 +185,7 @@ $ sudo dpkg-reconfigure tzdata
 
 Назначаем приложение для редактирования заданий CRON (мы используем Nano)
 ```
-crontab -e
+$ crontab -e
 ```
 
 Импортируем задания для CRON
