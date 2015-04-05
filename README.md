@@ -155,7 +155,7 @@ sudo mkdir /awslog
 
 Создаем файл логов
 ```
-sudo touch /awslog/automatition-instances.log
+sudo touch /awslog/automation-instances.log
 ```
 
 Назначаем для директории логов права доступа
@@ -165,7 +165,7 @@ sudo chmod -R 777 /awslog
 
 Устанавливаем комплект скриптов
 ```
-$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git ~/aws/automatition
+$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git ~/aws/automation
 ```
 
 Переходим в рабочую директорию
@@ -178,7 +178,7 @@ $ cd ~/aws
 $ find . -type f -exec chmod +x {} \;
 ```
 
-Устанавливаем правильный временной пояс (мы используем московское время)
+Устанавливаем правильный часовой пояс (мы используем московское время)
 ```
 $ sudo dpkg-reconfigure tzdata
 ```
