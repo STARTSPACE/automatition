@@ -165,7 +165,7 @@ sudo chmod -R 777 /awslog
 
 Устанавливаем комплект скриптов
 ```
-$ git clone https://github.com/STARTSPACE/aws-start-stop-reboot.git ~/aws/automation
+$ git clone https://github.com/STARTSPACE/aws-ec2-start-stop-reboot-by-timetable.git ~/aws/automation
 ```
 
 Переходим в рабочую директорию
