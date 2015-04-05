@@ -145,7 +145,7 @@ $ sudo apt-get install git
 
 Создаем рабочие директории
 ```
-$ mkdir ~/aws && mkdir ~/aws/automatition && mkdir ~/tmp
+$ mkdir ~/aws && mkdir ~/aws/automation && mkdir ~/tmp
 ```
 
 Создаем директорию для логов
