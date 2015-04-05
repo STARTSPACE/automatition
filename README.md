@@ -190,7 +190,7 @@ $ crontab -e
 
 Импортируем задания для CRON
 ```
-$ crontab ~/aws/automatition/import-cron-jobs-full-list.sh
+$ crontab ~/aws/automation/import-cron-jobs-combined.sh
 ```
 
 **На этом установка завершена**
