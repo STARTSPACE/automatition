@@ -5,7 +5,7 @@ today=`date +"%d-%m-%Y","%T"`
 logfile="/awslog/automation-instances.log"
 
 # Grab all Instance IDs for REBOOT action and export the IDs to a text file
-sudo aws ec2 describe-instances --filters Name=tag:bash-reboottime,Values=10-00 Name=tag:bash-profile,Values=ad --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/reboot_ad_instance_info.txt 2>&1
+sudo aws ec2 describe-instances --filters Name=tag:reboot-time,Values=10-00 Name=tag:bash-profile,Values=ad --query Reservations[*].Instances[*].[InstanceId] --output text > ~/tmp/reboot_ad_instance_info.txt 2>&1
 
 # Take list of rebooting instances
 for instance_id in $(cat ~/tmp/reboot_ad_instance_info.txt)
