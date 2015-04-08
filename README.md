@@ -1,5 +1,3 @@
-![STARTSPACE Logo](https://www.startspace.ru/logo-github.png)
-
 Разработано   **[STARTSPACE - корпоративное облако приложений 1С, SQL & WEB] (https://www.startspace.ru)**
 
 Вашему вниманию представлена коллекция скриптов автоматизации запуска, остановки и перезапуска инстанций AWS.
