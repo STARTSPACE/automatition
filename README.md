@@ -12,4 +12,12 @@
 
 ***
 
+**Внимание!** Мы рекомендуем начать установку скриптов с решения, которое для Вас наиболее актуально. Данный комплект скриптов обеспечивает запуск, остановку и перезапуск инстанций AWS по расписанию.
+
+Если Вы в первую очередь нуждаетесь в резервном копировании EBS дисков инстанций AWS, то начните установку с комплекта скриптов для [Резервного копирования EBS дисков инстанций AWS по расписанию](https://github.com/STARTSPACE/aws-ebs-snapshot-with-tags-by-timetable)
+
+Если Вы в первую очередь нуждаетесь в организации доступа к службам виртуального сервера, то начните установку с комплекта скриптов [Доступа к службам на инстанциях AWS по расписанию](https://github.com/STARTSPACE/aws-access-to-ec2-by-timetable)
+
+Перед началом установки обязательно познакомьтесь с нашими рекомендациями по выбору типа ресурса в зависимости от устанавливаемого комплекта. Рекомендации размещены на странице [FAQ Ru](https://github.com/STARTSPACE/aws-ec2-start-stop-reboot-by-timetable/wiki/FAQ-Ru)
+
 [Home](https://github.com/STARTSPACE/aws-ec2-start-stop-reboot-by-timetable/wiki) | [Веб-сайт](https://www.startspace.ru/) | [Тест-драйв](https://www.startspace.ru/zakaz) | [Запрос цены](https://cp.startspace.ru/cart.php?a=view) | [Панель клиента](https://cp.startspace.ru/index.php)
